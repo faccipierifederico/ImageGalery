@@ -1,0 +1,108 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container{
+    padding: 1.5% 7.5%;
+}
+
+.container-grid{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: repeat(1);
+    grid-template-areas:
+    "img3 img4 img1 img1 img1"
+    "img2 img2 img2 img5 img6";
+    gap: 5px;
+}
+
+.img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.img:hover{
+    cursor: zoom-in;
+    transition: border-bottom 1s;
+}
+
+.img1{
+    grid-area: img1;
+}
+.img2{
+    grid-area: img2;
+}
+.img3{
+    grid-area: img3;
+}
+.img4{
+    grid-area: img4;
+}
+.img5{
+    grid-area: img5;
+}
+.img6{
+    grid-area: img6;
+}
+
+.container-img{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform: translateX(-150%);
+    background: rgba(0, 0, 0, 0.775);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform .5s ease-in-out;
+}
+
+.move{
+    transform: translateX(0);
+}
+
+.img-show{
+    height: 80%;
+    display: block;
+    object-fit: contain;
+}
+
+.copy{
+    position: fixed;
+    color: #fff;
+    bottom: 40px;
+}
+
+.bx.bx-x{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    color: white;
+    font-size: 30px;
+}
+
+.bx.bx-x:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1320px){
+    .container-img{
+        width: 100%;
+    }
+
+    .img-show{
+        object-fit: contain;
+        width: 90%;
+    }
+}
